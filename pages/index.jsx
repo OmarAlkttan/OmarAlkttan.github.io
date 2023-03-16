@@ -5,7 +5,7 @@ import ResponsiveHeader from './ResponsiveHeader'
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons' 
-import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronCircleDown, faDownload, faFileDownload } from '@fortawesome/free-solid-svg-icons'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,6 +44,17 @@ export default function Home() {
         
       }
     });
+
+    const header = document.getElementById("header-content");
+    const navBar = document.getElementById("nav-header");
+    if(window.scrollY >= (header.offsetTop + 140) && window.scrollY < (header.offsetTop + header.offsetHeight)){
+      console.log("header top ", header.offsetTop);
+      console.log("headder top + height", (header.offsetTop + header.offsetHeight));
+      navBar.classList.add('hidden');
+    }else{
+      navBar.classList.remove('hidden');
+      console.log(navBar);
+    }
   };
 
   useEffect(() => {
@@ -61,7 +72,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section ref={homeRef} id="home" className="w-full h-[800px] min-h-[500px] bg-cover bg-start"
+      <section ref={homeRef} id="home" className="w-full h-[750px] min-h-[500px] bg-cover bg-start"
       style={{ backgroundImage: `url('/images/sky.jpg')` }}>
         <div className='hidden'>
           <Image 
@@ -83,7 +94,7 @@ export default function Home() {
               })}
             </ul>
         </nav>
-        <div id="header-content" className='pt-[10%] '>
+        <div id="header-content" className='pt-[15%] '>
           <div className='w-2xl mx-auto'>
             <ResponsiveHeader />
             <div className='max-w-2xl m-auto'>
@@ -102,7 +113,7 @@ export default function Home() {
             </div>
             
           </div>
-          <div className='text-center mt-20'>
+          <div className='text-center mt-[9rem]'>
 
             <a href='#about' >
               <FontAwesomeIcon className='cursor-pointer  mx-auto hover:text-teal-400 transition-colors ease-linear duration-100 ' size='3x' color='white' icon={faChevronCircleDown} />
@@ -111,8 +122,38 @@ export default function Home() {
           
         </div>
       </section>
-      <section id="about" className='h-[600px] bg-green-100' ref={aboutRef}>
-        
+      <section id="about" className='h-[600px] bg-[#191919]' ref={aboutRef}>
+        <div className='max-w-4xl mx-auto flex py-24 text-white gap-6'>
+              <div className='basis-1/4 w-[10rem] h-[10rem]'>
+                <Image src={'/images/profile.jpg'} className='rounded-full mx-auto' alt='my-profile' width={130} height={130} />
+              </div>
+              <div className='basis-3/4 '>
+                <h2 className='text-3xl font-bold mb-3'>About Me</h2>
+                <p className='text-[#7a7a7a] text-lg mb-8'>
+                  {'Hello! My name is Omar and I refuse to be confined to one box. Some of the labels that do apply to me are fullstack developer, adventurer and avid football fan. I am constantly on the hunt to explore new ideas and develop myself both personally and professionally. One thing you should know about me is that I was affectionately called "Tota" while growing up, and that I insert that name into apps I clone as a cheeky calling card (anyone want to watch the Dark Knight on Totaflix?)'}
+                </p>
+                <div className='flex'>
+                  <div className='basis-1/2'>
+                    <h2 className='text-3xl font-bold mb-4'>Contact Details</h2>
+                    <p className='text-lg text-[#7a7a7a]'>Omar Alktan</p>
+                    <br />
+                    <p className='text-lg text-[#7a7a7a]'>
+                      Cario Egypt,
+                      <br />
+                      oalktan@gmail.com
+                    </p>
+                  </div>
+                  <div className='basis-1/2 mt-8 text-xl'>
+                    <a type='button' href='/resume.pdf' download className='bg-[#444] rounded py-4 px-5 hover:bg-white hover:text-[#444] transition-none' >
+                      <FontAwesomeIcon icon={faDownload} className='transition-none'/>
+                      <span className='ml-3'>
+                        Download Resume
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
       </section>
       <section id="resume" className='h-screen bg-red-100' ref={resumeRef}></section>
       <section id="work" className='h-screen bg-blue-100' ref={workRef}></section>
