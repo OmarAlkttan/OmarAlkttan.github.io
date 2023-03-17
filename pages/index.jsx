@@ -2,10 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import ResponsiveHeader from './ResponsiveHeader'
+import Contact from '../components/Contact'
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons' 
-import { faChevronCircleDown, faDownload, faFileDownload } from '@fortawesome/free-solid-svg-icons'
+import { faChevronCircleDown, faDownload, faEnvelope, faFileDownload, faMailBulk, faMailForward } from '@fortawesome/free-solid-svg-icons'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -170,7 +171,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div className='basis-1/2 mt-8 text-xl'>
-                    <a type='button' href='/resume.pdf' download className='bg-[#444] rounded py-4 px-5 hover:bg-white hover:text-[#444] transition-none' >
+                    <a type='button' href='/omar-alktan-resume.pdf' download className='bg-[#444] rounded py-4 px-5 hover:bg-white hover:text-[#444] transition-none' >
                       <FontAwesomeIcon icon={faDownload} className='transition-none'/>
                       <span className='ml-3'>
                         Download Resume
@@ -284,7 +285,37 @@ export default function Home() {
             </div>
         </div>
       </section>
-      <section id="contact" className='h-screen bg-gray-100' ref={contactRef}></section>
+      <section id="contact" className=' bg-[#191919]' ref={contactRef}>
+        <div className='py-20 max-w-4xl mx-auto'>
+          <div className='relative'>
+            <div className='float-left w-[10rem]'>
+              <FontAwesomeIcon icon={faEnvelope} className='text-white   text-end' size='5x'/>
+
+            </div>
+            <span className='text-[#636363] absolute top-4 font-semibold text-2xl clear-both'>Get in touch with me!</span>
+          </div>
+          <div className='flex clear-both'>
+              <div className='basis-3/4'>
+                <Contact />
+              </div>
+              <div className='px-6 ml-0 mt-10 basis-1/4'>
+                <h4 className='text-white text-xl font-medium mb-5'>Address and Phone</h4>
+                <div className='text-[#636363] text-lg font-medium'>
+                  <p className='mb-5'>
+                    Omar Alktan
+                    <br />
+                    oalktan@gmail.com
+                  </p>
+                  <p>
+                    Cairo, Egypt
+                    <br />
+                    Phone number available upon request
+                  </p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
