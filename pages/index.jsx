@@ -16,6 +16,26 @@ const skills = [
 const loadingSkills = [
   {skill: 'typescipt', level: '50%'}, {skill: 'node js', level: '40%'}, {skill: 'express', level: '20%'}
 ];
+const works = [
+  {
+    "image-url": "/images/covid.jpg",
+    "link": "https://tota-book.web.app/",
+    "heading": "COVID-19 Tracker",
+    "desc": "Visualize COVID-19 spread data with this interactive dashboard"
+  },
+  {
+    "image-url": "/images/totaflix.jpg",
+    "link": "https://totaflix.web.app/",
+    "heading": "Totaflix",
+    "desc": "Watch trailers of films and series both old and new"
+  },
+  {
+    "image-url": "/images/totabook.jpg",
+    "link": "https://tota-book.web.app/",
+    "heading": "Totabook",
+    "desc": "Leave me a nice message in this facebook clone :)"
+  },
+]
 
 export default function Home() {
 
@@ -241,7 +261,29 @@ export default function Home() {
             </div>
         </div>
       </section>
-      <section id="work" className='h-screen bg-blue-100' ref={workRef}></section>
+      <section id="work" className=' bg-[#ebeeee]' ref={workRef}>
+        <div className='py-20 max-w-4xl mx-auto'>
+            <h3 className='text-[#95a3a3] uppercase text-xl text-center font-medium tracking-wide mb-12'>
+              Check out some of my works.
+            </h3>
+            <div className='flex gap-20 justify-center'>
+                {works.map((work)=>{
+                  return(
+                    <div key={work.heading} className='group relative'>
+                      <a href={work.link} target='_blank'>
+                        <Image src={work['image-url']} alt={work['image-url']} className='hover:after:content=[heading]' title={work.heading} width={256} height={256}></Image>
+                      
+                      <div class="absolute inset-0 bg-black opacity-0 hover:opacity-75 flex flex-col items-start p-4 justify-start transition duration-500">
+                        <h5 class="text-white text-lg font-bold">{work.heading}</h5>
+                        <p className='text-[#eeeaea] text-sm'>{work.desc}</p>
+                      </div>
+                      </a>
+                    </div>
+                  )
+                })}
+            </div>
+        </div>
+      </section>
       <section id="contact" className='h-screen bg-gray-100' ref={contactRef}></section>
     </>
   )
