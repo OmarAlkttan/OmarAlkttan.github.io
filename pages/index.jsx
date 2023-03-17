@@ -6,7 +6,7 @@ import Contact from '../components/Contact'
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons' 
-import { faChevronCircleDown, faDownload, faEnvelope, faFileDownload, faMailBulk, faMailForward } from '@fortawesome/free-solid-svg-icons'
+import { faChevronCircleDown, faChevronCircleUp, faCircleArrowUp, faDownload, faEnvelope, faFileDownload, faMailBulk, faMailForward } from '@fortawesome/free-solid-svg-icons'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -316,6 +316,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <footer className='bg-[#303030] relative'>
+        <a href='#home' >
+          <FontAwesomeIcon className='cursor-pointer bg-white ring-[#525252] rounded-full absolute left-[48%] top-[-20px] mx-auto hover:text-white hover:bg-[#525252] transition-colors ease-linear duration-100 ' size='3x' color='#525252' icon={faChevronCircleUp} />
+        </a>
+        <div className='flex gap-10 justify-center items-center h-[10rem]'>
+          <a href="https://github.com/OmarAlkttan" target='_blank'>
+            <FontAwesomeIcon className='hover:text-white text-[#525252] transition-colors ease-linear duration-100 cursor-pointer' icon={faGithub} size="2xl" color='white'/> 
+          </a>
+          <a href="https://www.linkedin.com/in/omar-alktan-948012153/" target='_blank'>
+            <FontAwesomeIcon className='hover:text-white text-[#525252] transition-colors ease-linear duration-100 cursor-pointer' icon={faLinkedinIn} size="2xl" color='white'/>  
+          </a>
+        </div>
+      </footer>
     </>
   )
 }
