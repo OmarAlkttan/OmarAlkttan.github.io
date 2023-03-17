@@ -5,10 +5,8 @@ import ResponsiveHeader from './ResponsiveHeader'
 import Contact from '../components/Contact'
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons' 
-import { faChevronCircleDown, faChevronCircleUp, faCircleArrowUp, faDownload, faEnvelope, faFileDownload, faMailBulk, faMailForward } from '@fortawesome/free-solid-svg-icons'
-
-const inter = Inter({ subsets: ['latin'] })
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons' 
+import { faBars, faChevronCircleDown, faChevronCircleUp, faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const navValues = ['home', 'about', 'resume', 'work', 'contact'];
 const skills = [
@@ -41,11 +39,18 @@ const works = [
 export default function Home() {
 
   const [activeLink, setActiveLink] = useState('');
+  const [activeNav, setActiveNav]= useState(false);
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
+
+  const handleNavToggle = () =>{
+    
+    console.log("active nav", activeNav);
+    activeNav? setActiveNav(false) : setActiveNav(true);
+  }
 
   const handleScroll = () => {
     
@@ -71,6 +76,8 @@ export default function Home() {
         
       }
     });
+
+
 
     const header = document.getElementById("header-content");
     const navBar = document.getElementById("nav-header");
@@ -99,7 +106,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section ref={homeRef} id="home" className="w-full h-[750px] min-h-[500px] bg-cover bg-start"
+      <section ref={homeRef} id="home" className="w-full h-[750px] min-h-[500px] bg-cover bg-start relative"
       style={{ backgroundImage: `url('/images/sky.jpg')` }}>
         <div className='hidden'>
           <Image 
@@ -110,17 +117,41 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <nav id="nav-header" className={`fixed ${activeLink !== '#home' && activeLink !== '' ? 'bg-[#130406]' : ''} top-0 py-2 left-0 w-full z-10`}>
-            <ul className='flex justify-center'>
-              {navValues.map(value=>{
-                return (
-                  <li key={value} className={` ${activeLink === `#${value}` ? `text-green-400` : `text-white`}  text-center text-sm font-semibold tracking-custom flex-row px-3 py-2 uppercase cursor-pointer`}>
-                    <a href={`#${value}`}>{value}</a>
-                  </li>
-                )
-              })}
-            </ul>
-        </nav>
+        <div className='md:hidden'>
+          <button className='cursor-pointer z-100' onClick={handleNavToggle}>
+            <FontAwesomeIcon icon={faBars} size='xl' color='white' className='bg-green-500 p-3 top-0 fixed right-7' />
+          </button>
+          {
+            activeNav && (
+              <div className='fixed bg-[#1f2024] text-lg font-semibold py-8 px-8 top-[4rem] right-7 z-10'>
+                <ul className='space-y-2'>
+                  {navValues.map(value=>{
+                    return(
+                      <>
+                        <li key={value} className={` ${activeLink === `#${value}` ? `text-green-400` : `text-white`} border-b pb-3 text-center uppercase border-[#2D2E34]`}>
+                          <a href={`#${value}`} onClick={()=>{setActiveNav(false)}}>{value}</a>
+                        </li>
+                      </>
+                    )
+                  })}
+                </ul>
+              </div>
+            )
+          }
+        </div>
+        <div className='hidden md:block'>
+          <nav id="nav-header" className={`fixed ${activeLink !== '#home' && activeLink !== '' ? 'bg-[#130406]' : ''} top-0 py-2 left-0 w-full z-10`}>
+              <ul className='flex justify-center'>
+                {navValues.map(value=>{
+                  return (
+                    <li key={value} className={` ${activeLink === `#${value}` ? `text-green-400` : `text-white`}  text-center text-sm font-semibold tracking-custom flex-row px-3 py-2 uppercase cursor-pointer`}>
+                      <a href={`#${value}`} >{value}</a>
+                    </li>
+                  )
+                })}
+              </ul>
+          </nav>
+        </div>
         <div id="header-content" className='pt-[15%] '>
           <div className='w-2xl mx-auto'>
             <ResponsiveHeader />
