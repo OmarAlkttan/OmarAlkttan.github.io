@@ -10,6 +10,12 @@ import { faChevronCircleDown, faDownload, faFileDownload } from '@fortawesome/fr
 const inter = Inter({ subsets: ['latin'] })
 
 const navValues = ['home', 'about', 'resume', 'work', 'contact'];
+const skills = [
+  {skill: 'java', level: '100%'}, {skill: 'spring boot', level: '80%'}, {skill: 'back end', level: '80%'}, {skill: 'javascript', level: '75%'}, {skill: 'reactjs', level: '60%'}, {skill: 'web development', level: '65%'}, {skill: 'git', level: '100%'}
+];
+const loadingSkills = [
+  {skill: 'typescipt', level: '50%'}, {skill: 'node js', level: '40%'}, {skill: 'express', level: '20%'}
+];
 
 export default function Home() {
 
@@ -155,7 +161,86 @@ export default function Home() {
               </div>
         </div>
       </section>
-      <section id="resume" className='h-screen bg-red-100' ref={resumeRef}></section>
+      <section id="resume" className='bg-white ' ref={resumeRef}>
+        <div className='py-20 max-w-4xl mx-auto'>
+            <div className='flex gap-6'>
+              <h2 className='basis-1/4 text-start text-2xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Education</h2>
+              <div className='basis-3/4'>
+                <div>
+                  <h3 className='text-3xl font-bold tracking-wider mb-3'>October 6 University</h3>
+                  <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>Bachelor of Science, Computer Science </span> • February 2022</p>
+                  <p className='text-[#838c95] text-lg'>
+                    <span className='font-bold'>Graduation Project:</span> Cross-platform mobile application to provide a connection between car owner
+                    and renter by providing cars available to clients and make them choose the proper car to them.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <hr className='my-10'/>
+            <div className='flex gap-6'>
+              <h2 className='basis-1/4 text-start text-2xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Work</h2>
+              <div className='basis-3/4'>
+                <div className='mb-10'>
+                  <h3 className='text-3xl font-bold tracking-wider mb-3'>QbDVision Inc.</h3>
+                  <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>Software Engineer
+                  </span> • April 2021 - Present</p>
+                  <p className='text-[#838c95] text-lg'>
+                    Plan, implement, and test new software features in a client-facing web app aiding key players in the pharmaceutical industry to avail drugs and vaccines to patients in a faster and more efficient manner
+                  </p>
+                </div>
+                <div className='mb-10'>
+                  <h3 className='text-3xl font-bold tracking-wider mb-3'>Egabi Solutions</h3>
+                  <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>Fullstack Intern in Cairo, Egypt
+                  </span> • July 2018 - August 2018</p>
+                  <p className='text-[#838c95] text-lg'>
+                    Engineered a collaborative full-stack project with other interns using Spring MVC and Oracle database.
+                  </p>
+                </div>
+                <div>
+                  <h3 className='text-3xl font-bold tracking-wider mb-3'>Camp Europe e.V.</h3>
+                  <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>International Camp Counselor in Walsrode, Munich and Amposta, Spain
+                  </span> • June 2019 - August 2019</p>
+                  <p className='text-[#838c95] text-lg'>
+                    Planned a schedule of outdoor and survival activities every day for a group of 400 international campers.
+                  </p>
+                  <p className='text-[#838c95] text-lg mt-6'>
+                    Assisted European Space Agency staff with programming and physics experiments pertaining to space exploration.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <hr className='my-10'/>
+            <div className='flex gap-6'>
+              <h2 className='basis-1/4 text-start text-2xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Skils</h2>
+              <div className='basis-3/4'>
+                <p className='text-[#838c95] text-lg mb-6'>
+                  My Programming Language Proficiency
+                </p>
+                {skills.map((value)=>{
+                  return(
+                    <div key={value} className='mb-8'>
+                      <h3 className='uppercase text-xl font-semibold mb-5 '>{value.skill}</h3>
+                      <div className="w-full h-6 rounded-full bg-gray-300">
+                        <div className="h-full rounded-full bg-[#313131]" style={{ width: `${value.level}` }}></div>
+                      </div>
+                    </div>
+                  )
+                })}
+                <h3 className='text-[#313131] text-3xl mt-10 mb-6 font-semibold'>Loading...</h3>
+                {loadingSkills.map((value)=>{
+                  return(
+                    <div key={value} className='mb-8'>
+                      <h3 className='uppercase text-xl font-semibold mb-5'>{value.skill}</h3>
+                      <div className="w-full h-6 rounded-full bg-gray-300">
+                        <div className="h-full rounded-full bg-[#313131]" style={{ width: `${value.level}` }}></div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+        </div>
+      </section>
       <section id="work" className='h-screen bg-blue-100' ref={workRef}></section>
       <section id="contact" className='h-screen bg-gray-100' ref={contactRef}></section>
     </>
