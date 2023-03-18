@@ -62,7 +62,7 @@ const Contact = () => {
             (e.target.value)}
         />
       </div>
-      <button type="submit" className='bg-[#0d0d0d] text-white tracking-[0.2rem] text-xl font-semibold ml-[10rem] px-8 py-6 uppercase hover:bg-white hover:text-[#0d0d0d]'>Submit</button>
+      <button type="submit" className='bg-[#0d0d0d] text-white tracking-[0.2rem] lg:text-xl font-semibold lg:ml-[10rem] px-8 py-6 uppercase hover:bg-white hover:text-[#0d0d0d]'>Submit</button>
     </form>
   );
 };

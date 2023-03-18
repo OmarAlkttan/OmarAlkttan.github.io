@@ -106,7 +106,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section ref={homeRef} id="home" className="w-full h-[750px] min-h-[500px] bg-cover bg-start relative"
+      <section ref={homeRef} id="home" className="w-full h-[750px] min-h-[500px] bg-cover bg-top relative"
       style={{ backgroundImage: `url('/images/sky.jpg')` }}>
         <div className='hidden'>
           <Image 
@@ -117,9 +117,11 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <div className='md:hidden'>
-          <button className='cursor-pointer z-100' onClick={handleNavToggle}>
-            <FontAwesomeIcon icon={faBars} size='xl' color='white' className='bg-green-500 p-3 top-0 fixed right-7' />
+        <div className='md:hidden '>
+          <button className='' onClick={handleNavToggle}>
+            <div className='cursor-pointer z-100 p-3 bg-green-400  top-0 fixed right-7 '>
+              <FontAwesomeIcon icon={faBars} size='xl' color='white' />
+            </div>
           </button>
           {
             activeNav && (
@@ -152,11 +154,11 @@ export default function Home() {
               </ul>
           </nav>
         </div>
-        <div id="header-content" className='pt-[15%] '>
-          <div className='w-2xl mx-auto'>
+        <div id="header-content" className='lg:pt-[15%] pt-[40%] z-1'>
+          <div className='w-[28rem] lg:w-[90rem] mx-auto'>
             <ResponsiveHeader />
             <div className='max-w-2xl m-auto'>
-              <h3 className='text-center pt-8 text-xl font-thinner text-[#a8a8a8] w-120 '>
+              <h3 className='text-center pt-8 text-lg lg:text-xl font-thinner text-[#a8a8a8] w-120 '>
                 {"Based in Cairo. "}
                 <span className='text-white'>Software Engineer and Polymath</span>. {"I think thoughts others don't so I could do things others won't."}
               </h3>
@@ -171,7 +173,7 @@ export default function Home() {
             </div>
             
           </div>
-          <div className='text-center mt-[9rem]'>
+          <div className='text-center mt-[9rem] hidden lg:block'>
 
             <a href='#about' >
               <FontAwesomeIcon className='cursor-pointer  mx-auto hover:text-teal-400 transition-colors ease-linear duration-100 ' size='3x' color='white' icon={faChevronCircleDown} />
@@ -180,18 +182,18 @@ export default function Home() {
           
         </div>
       </section>
-      <section id="about" className='h-[600px] bg-[#191919]' ref={aboutRef}>
-        <div className='max-w-4xl mx-auto flex py-24 text-white gap-6'>
-              <div className='basis-1/4 w-[10rem] h-[10rem]'>
+      <section id="about" className=' bg-[#191919]' ref={aboutRef}>
+        <div className='lg:w-[60rem] mx-auto flex py-24 text-white gap-6'>
+              <div className='lg:basis-1/4 w-[10rem] h-[10rem] hidden lg:block'>
                 <Image src={'/images/profile.jpg'} className='rounded-full mx-auto' alt='my-profile' width={130} height={130} />
               </div>
-              <div className='basis-3/4 '>
+              <div className='lg:basis-3/4 w-[28rem] mx-auto'>
                 <h2 className='text-3xl font-bold mb-3'>About Me</h2>
                 <p className='text-[#7a7a7a] text-lg mb-8'>
                   {'Hello! My name is Omar and I refuse to be confined to one box. Some of the labels that do apply to me are fullstack developer, adventurer and avid football fan. I am constantly on the hunt to explore new ideas and develop myself both personally and professionally. One thing you should know about me is that I was affectionately called "Tota" while growing up, and that I insert that name into apps I clone as a cheeky calling card (anyone want to watch the Dark Knight on Totaflix?)'}
                 </p>
-                <div className='flex'>
-                  <div className='basis-1/2'>
+                <div className='lg:flex lg:flex-row'>
+                  <div className='lg:basis-1/2'>
                     <h2 className='text-3xl font-bold mb-4'>Contact Details</h2>
                     <p className='text-lg text-[#7a7a7a]'>Omar Alktan</p>
                     <br />
@@ -201,8 +203,8 @@ export default function Home() {
                       oalktan@gmail.com
                     </p>
                   </div>
-                  <div className='basis-1/2 mt-8 text-xl'>
-                    <a type='button' href='/omar-alktan-resume.pdf' download className='bg-[#444] rounded py-4 px-5 hover:bg-white hover:text-[#444] transition-none' >
+                  <div className='lg:basis-1/2 mt-8 text-xl w-[28rem]'>
+                    <a type='button' href='/omar-alktan-resume.pdf' download className='bg-[#444] w-[100%] text-center rounded py-4 px-5 hover:bg-white hover:text-[#444] transition-none' >
                       <FontAwesomeIcon icon={faDownload} className='transition-none'/>
                       <span className='ml-3'>
                         Download Resume
@@ -214,13 +216,13 @@ export default function Home() {
         </div>
       </section>
       <section id="resume" className='bg-white ' ref={resumeRef}>
-        <div className='py-20 max-w-4xl mx-auto'>
-            <div className='flex gap-6'>
-              <h2 className='basis-1/4 text-start text-2xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Education</h2>
-              <div className='basis-3/4'>
-                <div>
-                  <h3 className='text-3xl font-bold tracking-wider mb-3'>October 6 University</h3>
-                  <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>Bachelor of Science, Computer Science </span> • February 2022</p>
+        <div className='py-20 w-[24rem] lg:w-[60rem] mx-auto text-center'>
+            <div className='lg:flex space-y-10 lg:space-y-0 gap-6 '>
+              <h2 className='lg:basis-1/4 text-center lg:text-start lg:text-2xl text-lg tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Education</h2>
+              <div className='lg:basis-3/4 mt-0'>
+                <div className='lg:text-start'>
+                  <h3 className='lg:text-3xl text-2xl font-bold tracking-wider mb-3'>October 6 University</h3>
+                  <p className='text-lg text-[#6e7881] mb-5 '><span className='italic mr-2'>Bachelor of Science, Computer Science </span> • February 2022</p>
                   <p className='text-[#838c95] text-lg'>
                     <span className='font-bold'>Graduation Project:</span> Cross-platform mobile application to provide a connection between car owner
                     and renter by providing cars available to clients and make them choose the proper car to them.
@@ -229,11 +231,11 @@ export default function Home() {
               </div>
             </div>
             <hr className='my-10'/>
-            <div className='flex gap-6'>
-              <h2 className='basis-1/4 text-start text-2xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Work</h2>
-              <div className='basis-3/4'>
-                <div className='mb-10'>
-                  <h3 className='text-3xl font-bold tracking-wider mb-3'>QbDVision Inc.</h3>
+            <div className='lg:flex lg:space-y-0 space-y-10 lg:gap-6'>
+              <h2 className='basis-1/4 lg:text-start lg:text-2xl text-lg tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Work</h2>
+              <div className='basis-3/4 lg:text-start'>
+                <div className='mb-10 '>
+                  <h3 className='lg:text-3xl text-2xl font-bold tracking-wider mb-3'>QbDVision Inc.</h3>
                   <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>Software Engineer
                   </span> • April 2021 - Present</p>
                   <p className='text-[#838c95] text-lg'>
@@ -241,48 +243,48 @@ export default function Home() {
                   </p>
                 </div>
                 <div className='mb-10'>
-                  <h3 className='text-3xl font-bold tracking-wider mb-3'>Egabi Solutions</h3>
+                  <h3 className='lg:text-3xl text-2xl font-bold tracking-wider mb-3'>Egabi Solutions</h3>
                   <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>Fullstack Intern in Cairo, Egypt
                   </span> • July 2018 - August 2018</p>
-                  <p className='text-[#838c95] text-lg'>
+                  <p className='text-[#838c95] lg:text-lg'>
                     Engineered a collaborative full-stack project with other interns using Spring MVC and Oracle database.
                   </p>
                 </div>
                 <div>
-                  <h3 className='text-3xl font-bold tracking-wider mb-3'>Camp Europe e.V.</h3>
+                  <h3 className='lg:text-3xl text-2xl font-bold tracking-wider mb-3'>Camp Europe e.V.</h3>
                   <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>International Camp Counselor in Walsrode, Munich and Amposta, Spain
                   </span> • June 2019 - August 2019</p>
-                  <p className='text-[#838c95] text-lg'>
+                  <p className='text-[#838c95] lg:text-lg'>
                     Planned a schedule of outdoor and survival activities every day for a group of 400 international campers.
                   </p>
-                  <p className='text-[#838c95] text-lg mt-6'>
+                  <p className='text-[#838c95] lg:text-lg mt-6'>
                     Assisted European Space Agency staff with programming and physics experiments pertaining to space exploration.
                   </p>
                 </div>
               </div>
             </div>
             <hr className='my-10'/>
-            <div className='flex gap-6'>
-              <h2 className='basis-1/4 text-start text-2xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Skils</h2>
-              <div className='basis-3/4'>
+            <div className='lg:flex space-y-10 lg:space-y-0 gap-6'>
+              <h2 className='lg:basis-1/4 lg:text-start lg:text-2xl text-xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Skils</h2>
+              <div className='basis-3/4 lg:text-start'>
                 <p className='text-[#838c95] text-lg mb-6'>
                   My Programming Language Proficiency
                 </p>
                 {skills.map((value)=>{
                   return(
                     <div key={value} className='mb-8'>
-                      <h3 className='uppercase text-xl font-semibold mb-5 '>{value.skill}</h3>
+                      <h3 className='uppercase lg:text-xl text-start lg:text-center font-semibold mb-5 '>{value.skill}</h3>
                       <div className="w-full h-6 rounded-full bg-gray-300">
                         <div className="h-full rounded-full bg-[#313131]" style={{ width: `${value.level}` }}></div>
                       </div>
                     </div>
                   )
                 })}
-                <h3 className='text-[#313131] text-3xl mt-10 mb-6 font-semibold'>Loading...</h3>
+                <h3 className='text-[#313131] text-start lg:text-center text-2xl lg:text-3xl mt-10 mb-6 font-semibold'>Loading...</h3>
                 {loadingSkills.map((value)=>{
                   return(
                     <div key={value} className='mb-8'>
-                      <h3 className='uppercase text-xl font-semibold mb-5'>{value.skill}</h3>
+                      <h3 className='uppercase lg:text-center text-start lg:text-xl font-semibold mb-5'>{value.skill}</h3>
                       <div className="w-full h-6 rounded-full bg-gray-300">
                         <div className="h-full rounded-full bg-[#313131]" style={{ width: `${value.level}` }}></div>
                       </div>
@@ -294,19 +296,19 @@ export default function Home() {
         </div>
       </section>
       <section id="work" className=' bg-[#ebeeee]' ref={workRef}>
-        <div className='py-20 max-w-4xl mx-auto'>
-            <h3 className='text-[#95a3a3] uppercase text-xl text-center font-medium tracking-wide mb-12'>
+        <div className='py-20 w-[24rem] lg:w-[60rem] mx-auto'>
+            <h3 className='text-[#95a3a3] uppercase lg:text-xl text-center font-medium tracking-wide mb-12'>
               Check out some of my works.
             </h3>
-            <div className='flex gap-20 justify-center'>
+            <div className='flex gap-7 lg:gap-20 justify-center'>
                 {works.map((work)=>{
                   return(
                     <div key={work.heading} className='group relative'>
                       <a href={work.link} target='_blank'>
                         <Image src={work['image-url']} alt={work['image-url']} className='hover:after:content=[heading]' title={work.heading} width={256} height={256}></Image>
                       
-                      <div class="absolute inset-0 bg-black opacity-0 hover:opacity-75 flex flex-col items-start p-4 justify-start transition duration-500">
-                        <h5 class="text-white text-lg font-bold">{work.heading}</h5>
+                      <div class="absolute inset-0 truncate bg-black opacity-0 hover:opacity-75 flex flex-col items-start p-4 justify-start transition duration-500 ">
+                        <h5 class="text-white text-sm lg:text-lg font-bold">{work.heading}</h5>
                         <p className='text-[#eeeaea] text-sm'>{work.desc}</p>
                       </div>
                       </a>
@@ -317,15 +319,15 @@ export default function Home() {
         </div>
       </section>
       <section id="contact" className=' bg-[#191919]' ref={contactRef}>
-        <div className='py-20 max-w-4xl mx-auto'>
-          <div className='relative'>
-            <div className='float-left w-[10rem]'>
-              <FontAwesomeIcon icon={faEnvelope} className='text-white   text-end' size='5x'/>
+        <div className='py-20 lg:w-[60rem] w-[28rem] mx-auto'>
+          <div className='relative text-center'>
+            <div className='float-left w-[10rem] hidden lg:block'>
+              <FontAwesomeIcon icon={faEnvelope} className='text-white text-end' size='5x'/>
 
             </div>
-            <span className='text-[#636363] absolute top-4 font-semibold text-2xl clear-both'>Get in touch with me!</span>
+            <span className='text-[#636363] text-center lg:absolute lg:top-4 font-semibold text-xl lg:text-2xl lg:clear-both'>Get in touch with me!</span>
           </div>
-          <div className='flex clear-both'>
+          <div className='lg:flex clear-both'>
               <div className='basis-3/4'>
                 <Contact />
               </div>
