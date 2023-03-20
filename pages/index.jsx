@@ -154,11 +154,11 @@ export default function Home() {
               </ul>
           </nav>
         </div>
-        <div id="header-content" className='lg:pt-[15%] pt-[40%] z-1'>
-          <div className='w-[28rem] sm:w-[30rem] lg:w-[90rem] mx-auto'>
+        <div id="header-content" className='lg:pt-[15%] sm:pt-[30%] pt-[40%] z-1'>
+          <div className='w-[28rem] sm:w-[30rem] md:w-[40rem] lg:w-[90rem] mx-auto'>
             <ResponsiveHeader />
             <div className='max-w-2xl m-auto'>
-              <h3 className='text-center pt-8 text-lg lg:text-xl font-thinner text-[#a8a8a8] w-120 '>
+              <h3 className='text-center pt-8 text-lg md:text-2xl font-thinner text-[#a8a8a8] w-120 '>
                 {"Based in Cairo. "}
                 <span className='text-white'>Software Engineer and Polymath</span>. {"I think thoughts others don't so I could do things others won't."}
               </h3>
@@ -173,7 +173,7 @@ export default function Home() {
             </div>
             
           </div>
-          <div className='text-center mt-[9rem] hidden lg:block'>
+          <div className='text-center mt-[9rem] hidden md:block'>
 
             <a href='#about' >
               <FontAwesomeIcon className='cursor-pointer  mx-auto hover:text-teal-400 transition-colors ease-linear duration-100 ' size='3x' color='white' icon={faChevronCircleDown} />
@@ -183,17 +183,17 @@ export default function Home() {
         </div>
       </section>
       <section id="about" className=' bg-[#191919]' ref={aboutRef}>
-        <div className='lg:w-[60rem] mx-auto flex py-24 text-white gap-6'>
-              <div className='lg:basis-1/4 w-[10rem] h-[10rem] hidden lg:block'>
+        <div className='lg:w-[60rem] md-w-[40rem] mx-auto flex py-24 text-white gap-6'>
+              <div className='md:basis-1/4 w-[10rem] h-[10rem] hidden md:block'>
                 <Image src={'/images/profile.jpg'} className='rounded-full mx-auto' alt='my-profile' width={130} height={130} />
               </div>
-              <div className='lg:basis-3/4 w-[28rem] mx-auto'>
+              <div className='md:basis-3/4 w-[28rem] mx-auto'>
                 <h2 className='text-3xl font-bold mb-3'>About Me</h2>
-                <p className='text-[#7a7a7a] text-lg mb-8'>
+                <p className='text-[#7a7a7a] text-lg mb-8 md:w-[90%]'>
                   {'Hello! My name is Omar and I refuse to be confined to one box. Some of the labels that do apply to me are fullstack developer, adventurer and avid football fan. I am constantly on the hunt to explore new ideas and develop myself both personally and professionally. One thing you should know about me is that I was affectionately called "Tota" while growing up, and that I insert that name into apps I clone as a cheeky calling card (anyone want to watch the Dark Knight on Totaflix?)'}
                 </p>
-                <div className='lg:flex lg:flex-row'>
-                  <div className='lg:basis-1/2'>
+                <div className='md:flex md:flex-row md:w-[35rem]'>
+                  <div className='md:basis-1/2'>
                     <h2 className='text-3xl font-bold mb-4'>Contact Details</h2>
                     <p className='text-lg text-[#7a7a7a]'>Omar Alktan</p>
                     <br />
@@ -203,7 +203,7 @@ export default function Home() {
                       oalktan@gmail.com
                     </p>
                   </div>
-                  <div className='lg:basis-1/2 mt-8 text-xl w-[28rem]'>
+                  <div className='md:basis-1/2 mt-8 md:mt-0 text-xl w-[28rem]'>
                     <a type='button' href='/omar-alktan-resume.pdf' download className='bg-[#444] w-[100%] text-center rounded py-4 px-5 hover:bg-white hover:text-[#444] transition-none' >
                       <FontAwesomeIcon icon={faDownload} className='transition-none'/>
                       <span className='ml-3'>
@@ -216,11 +216,11 @@ export default function Home() {
         </div>
       </section>
       <section id="resume" className='bg-white ' ref={resumeRef}>
-        <div className='py-20 w-[24rem] lg:w-[60rem] mx-auto text-center'>
-            <div className='lg:flex space-y-10 lg:space-y-0 gap-6 '>
-              <h2 className='lg:basis-1/4 text-center lg:text-start lg:text-2xl sm:text-xl text-lg tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Education</h2>
-              <div className='lg:basis-3/4 mt-0'>
-                <div className='lg:text-start'>
+        <div className='py-20 w-[24rem] lg:w-[60rem] md:w-[47rem] mx-auto text-center'>
+            <div className='md:flex space-y-10 md:space-y-0 gap-6 '>
+              <h2 className='md:basis-1/4 text-center md:text-start md:text-2xl sm:text-xl text-lg tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Education</h2>
+              <div className='md:basis-3/4 mt-0'>
+                <div className='md:text-start'>
                   <h3 className='sm:text-3xl text-2xl font-bold tracking-wider mb-3'>October 6 University</h3>
                   <p className='text-lg text-[#6e7881] mb-5 '><span className='italic mr-2'>Bachelor of Science, Computer Science </span> • February 2022</p>
                   <p className='text-[#838c95] text-lg'>
@@ -231,9 +231,9 @@ export default function Home() {
               </div>
             </div>
             <hr className='my-10'/>
-            <div className='lg:flex lg:space-y-0 space-y-10 lg:gap-6'>
-              <h2 className='basis-1/4 lg:text-start lg:text-2xl text-lg tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Work</h2>
-              <div className='basis-3/4 lg:text-start'>
+            <div className='md:flex md:space-y-0 space-y-10 md:gap-6'>
+              <h2 className='basis-1/4 md:text-start md:text-2xl text-lg tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Work</h2>
+              <div className='basis-3/4 md:text-start'>
                 <div className='mb-10 '>
                   <h3 className='sm:text-3xl text-2xl font-bold tracking-wider mb-3'>QbDVision Inc.</h3>
                   <p className='text-lg text-[#6e7881] mb-5'><span className='italic mr-2'>Software Engineer
@@ -264,27 +264,27 @@ export default function Home() {
               </div>
             </div>
             <hr className='my-10'/>
-            <div className='lg:flex space-y-10 lg:space-y-0 gap-6'>
-              <h2 className='lg:basis-1/4 lg:text-start sm:text-2xl text-xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Skils</h2>
-              <div className='basis-3/4 lg:text-start'>
+            <div className='md:flex space-y-10 md:w-[45rem] md:space-y-0 gap-6'>
+              <h2 className='md:basis-1/4 md:text-start sm:text-2xl text-xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Skils</h2>
+              <div className='basis-3/4 md:text-start'>
                 <p className='text-[#838c95] text-lg mb-6'>
                   My Programming Language Proficiency
                 </p>
                 {skills.map((value)=>{
                   return(
                     <div key={value} className='mb-8'>
-                      <h3 className='uppercase sm:text-xl text-start lg:text-center font-semibold mb-5 '>{value.skill}</h3>
+                      <h3 className='uppercase sm:text-xl text-start md:text-center font-semibold mb-5 '>{value.skill}</h3>
                       <div className="w-full h-6 rounded-full bg-gray-300">
                         <div className="h-full rounded-full bg-[#313131]" style={{ width: `${value.level}` }}></div>
                       </div>
                     </div>
                   )
                 })}
-                <h3 className='text-[#313131] text-start lg:text-center text-2xl lg:text-3xl mt-10 mb-6 font-semibold'>Loading...</h3>
+                <h3 className='text-[#313131] text-start lg:text-center text-2xl md:text-3xl mt-10 mb-6 font-semibold'>Loading...</h3>
                 {loadingSkills.map((value)=>{
                   return(
                     <div key={value} className='mb-8'>
-                      <h3 className='uppercase lg:text-center text-start lg:text-xl font-semibold mb-5'>{value.skill}</h3>
+                      <h3 className='uppercase md:text-center text-start md:text-xl font-semibold mb-5'>{value.skill}</h3>
                       <div className="w-full h-6 rounded-full bg-gray-300">
                         <div className="h-full rounded-full bg-[#313131]" style={{ width: `${value.level}` }}></div>
                       </div>
@@ -296,8 +296,8 @@ export default function Home() {
         </div>
       </section>
       <section id="work" className=' bg-[#ebeeee]' ref={workRef}>
-        <div className='py-20 w-[24rem] sm:w-[32rem] lg:w-[60rem] mx-auto'>
-            <h3 className='text-[#95a3a3] uppercase lg:text-xl text-center font-medium tracking-wide mb-12'>
+        <div className='py-20 w-[24rem] sm:w-[32rem] md:w-[45rem] lg:w-[60rem] mx-auto'>
+            <h3 className='text-[#95a3a3] uppercase md:text-xl text-center font-medium tracking-wide mb-12'>
               Check out some of my works.
             </h3>
             <div className='flex gap-7 lg:gap-20 justify-center'>
@@ -319,19 +319,19 @@ export default function Home() {
         </div>
       </section>
       <section id="contact" className=' bg-[#191919]' ref={contactRef}>
-        <div className='py-20 lg:w-[60rem] w-[28rem] mx-auto'>
+        <div className='py-20 lg:w-[60rem] md:w-[48rem] w-[28rem] mx-auto'>
           <div className='relative text-center'>
-            <div className='float-left w-[10rem] hidden lg:block'>
-              <FontAwesomeIcon icon={faEnvelope} className='text-white text-end' size='5x'/>
+            <div className='float-left w-[10rem] md:w-[3rem] hidden md:block'>
+              <FontAwesomeIcon icon={faEnvelope} className='text-white text-end' size='4x'/>
 
             </div>
-            <span className='text-[#636363] text-center lg:absolute lg:top-4 font-semibold text-xl sm:text-2xl lg:clear-both'>Get in touch with me!</span>
+            <span className='text-[#636363] text-center md:absolute md:top-4 md:left-[7rem] lg:left-[10rem] font-semibold text-xl sm:text-2xl md:clear-both'>Get in touch with me!</span>
           </div>
-          <div className='lg:flex clear-both'>
-              <div className='basis-3/4'>
+          <div className='md:flex clear-both'>
+              <div className='basis-3/4 md:basis-2/3'>
                 <Contact />
               </div>
-              <div className='px-6 ml-0 mt-10 basis-1/4'>
+              <div className='px-6 ml-0 mt-10 basis-1/4 md:basis-1/3'>
                 <h4 className='text-white text-xl font-medium mb-5'>Address and Phone</h4>
                 <div className='text-[#636363] text-lg font-medium'>
                   <p className='mb-5'>

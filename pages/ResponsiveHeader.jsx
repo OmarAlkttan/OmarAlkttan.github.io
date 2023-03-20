@@ -18,7 +18,7 @@ function ResponsiveHeader(){
   }, [name])
 
   return (
-    <h1 className="text-white sm:text-7xl text-5xl lg:text-9xl font-bold text-center text-shadow-black text-shadow-lg">
+    <h1 className="text-white sm:text-7xl text-5xl md:text-8xl lg:text-9xl font-bold text-center text-shadow-black text-shadow-lg">
       <span>{name}</span>
     </h1>
   )

@@ -16,10 +16,10 @@ const Contact = () => {
   return (
     <form className='text-white space-y-12 mt-10 ' onSubmit={handleSubmit}>
       <div className=''>
-        <label htmlFor="name" className='w-[10rem] inline-block  text-2xl float-left'>Name <span className='text-teal-400 '>*</span></label>
+        <label htmlFor="name" className='w-[10rem] md:w-[7rem] lg:w-[10rem] inline-block  text-2xl md:text-xl float-left'>Name <span className='text-teal-400 '>*</span></label>
         <input
           required
-          className='bg-[#373233] h-[3.5rem] p-4 w-[25rem] text-xl focus:outline-none focus:bg-teal-400 focus:required:bg-red-500'
+          className='bg-[#373233]  h-[3.5rem] p-4 w-[25rem] md:w-[22rem] lg:w-[25rem] text-xl focus:outline-none focus:bg-teal-400 focus:required:bg-red-500'
           type="text"
           id="name"
           name="name"
@@ -28,10 +28,10 @@ const Contact = () => {
         />
       </div>
       <div>
-        <label htmlFor="email" className='w-[10rem] inline-block text-2xl float-left'>Email <span className='text-teal-400 '>*</span></label>
+        <label htmlFor="email" className='w-[10rem] md:w-[7rem] lg:w-[10rem] inline-block text-2xl float-left'>Email <span className='text-teal-400 '>*</span></label>
         <input
           required
-          className='bg-[#373233] h-[3.5rem] p-4 w-[25rem] text-xl focus:outline-none focus:bg-teal-400 focus:required:bg-red-500'
+          className='bg-[#373233] h-[3.5rem] p-4 w-[25rem] md:w-[22rem] lg:w-[25rem] text-xl focus:outline-none focus:bg-teal-400 focus:required:bg-red-500'
           type="email"
           id="email"
           name="email"
@@ -40,9 +40,9 @@ const Contact = () => {
         />
       </div>
       <div>
-        <label htmlFor="subject" className='w-[10rem] inline-block text-2xl float-left'>Subject</label>
+        <label htmlFor="subject" className='w-[10rem] md:w-[7rem] lg:w-[10rem] inline-block text-2xl float-left'>Subject</label>
         <input
-          className='bg-[#373233] h-[3.5rem] p-4 w-[25rem] text-xl focus:outline-none focus:bg-teal-400'
+          className='bg-[#373233] h-[3.5rem] p-4 w-[25rem] md:w-[22rem] lg:w-[25rem] text-xl focus:outline-none focus:bg-teal-400'
           type="text"
           id="subject"
           name="subject"
@@ -51,10 +51,10 @@ const Contact = () => {
         />
       </div>
       <div>
-          <label htmlFor="message" className='w-[10rem] inline-block text-2xl float-left'>Message <span className='text-teal-400 '>*</span></label>
+          <label htmlFor="message" className='w-[10rem] md:w-[7rem] lg:w-[10rem] inline-block text-2xl float-left'>Message <span className='text-teal-400 '>*</span></label>
         <textarea
           required
-          className='bg-[#373233] h-[20rem] p-4 w-[25rem] text-xl focus:outline-none focus:bg-teal-400 focus:required:bg-red-500'
+          className='bg-[#373233] h-[20rem] p-4 w-[25rem] md:w-[22rem] lg:w-[25rem] text-xl focus:outline-none focus:bg-teal-400 focus:required:bg-red-500'
           id="message"
           name="message"
           value={message}
@@ -62,7 +62,7 @@ const Contact = () => {
             (e.target.value)}
         />
       </div>
-      <button type="submit" className='bg-[#0d0d0d] text-white tracking-[0.2rem] lg:text-xl font-semibold lg:ml-[10rem] px-8 py-6 uppercase hover:bg-white hover:text-[#0d0d0d]'>Submit</button>
+      <button type="submit" className='bg-[#0d0d0d] text-white tracking-[0.2rem] lg:text-xl font-semibold lg:ml-[10rem] md:ml-[7rem] px-8 py-6 uppercase hover:bg-white hover:text-[#0d0d0d]'>Submit</button>
     </form>
   );
 };
