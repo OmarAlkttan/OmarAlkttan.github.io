@@ -155,7 +155,7 @@ export default function Home() {
           </nav>
         </div>
         <div id="header-content" className='lg:pt-[15%] sm:pt-[30%] pt-[40%] z-1'>
-          <div className='w-[28rem] sm:w-[30rem] md:w-[40rem] lg:w-[90rem] mx-auto'>
+          <div className='w-[28rem] sm:w-[30rem] md:w-[40rem] lg:w-[60rem] mx-auto'>
             <ResponsiveHeader />
             <div className='max-w-2xl m-auto'>
               <h3 className='text-center pt-8 text-lg md:text-2xl font-thinner text-[#a8a8a8] w-120 '>
@@ -264,7 +264,7 @@ export default function Home() {
               </div>
             </div>
             <hr className='my-10'/>
-            <div className='md:flex space-y-10 md:w-[45rem] md:space-y-0 gap-6'>
+            <div className='md:flex space-y-10 md:w-[45rem] md:space-y-0 gap-6 lg:w-[60rem]'>
               <h2 className='md:basis-1/4 md:text-start sm:text-2xl text-xl tracking-wider font-semibold underline underline-offset-[0.8rem] decoration-[#11abb0] uppercase'>Skils</h2>
               <div className='basis-3/4 md:text-start'>
                 <p className='text-[#838c95] text-lg mb-6'>
